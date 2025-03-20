@@ -3,16 +3,23 @@ public class WeatherData {
     
     private ArrayList<Double> temperatures;
 
+    public WeatherData(ArrayList<Double> t) {
+        temperatures = t;
+    }
     public void cleanData(double lower, double upper) {
-        for (double temp : temperatures) {
-            if (temp <= lower || temp >= upper) { 
-                temperatures.remove(temp); 
+        for (int i = 0; i < temperatures.size(); i++) {
+            if (temperatures.get(i) <= lower || temperatures.get(i) >= upper) { 
+                temperatures.remove(i); 
             }
         }
     }
 
     public int longestHeatWave(double threshhold) {
         return 0;
+    }
+
+    public String toString() {
+        return temperatures.toString();
     }
 
 }
